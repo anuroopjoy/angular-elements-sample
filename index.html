@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="#" />
+    <script src="dist/ngWebComponent/runtime.js"></script>
+    <script src="dist/ngWebComponent/polyfills.js"></script>
+    <script src="dist/ngWebComponent/main.js"></script>
+  </head>
+  <body>
+    <my-app app-input="test" id="app1"></my-app>
+    <my-app app-input="initial">
+      Outside World
+    </my-app>
+    <script>
+      const elem1 = document.getElementById("app1");
+      elem1.addEventListener("appOutput", (evt) => {
+        console.log(evt.detail);
+      });
+    </script>
+  </body>
+</html>
